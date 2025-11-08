@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✈️ Countdown to Manchester</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Flight to Manchester</h1>
+    <div class="progress-container">
+      <svg viewBox="0 0 200 100" class="progress-arc">
+        <path class="background-arc" d="M10,100 A90,90 0 0,1 190,100" />
+        <path id="progress" class="progress-arc-path" d="M10,100 A90,90 0 0,1 190,100" />
+        <image id="plane" href="plane.png" width="30" height="30" />
+      </svg>
+    </div>
+
+    <div class="countdown">
+      <div id="days" class="time">0</div>
+      <div class="label">Days Left</div>
+      <div id="hours" class="time">00</div>
+      <div id="minutes" class="time">00</div>
+      <div id="seconds" class="time">00</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
