@@ -1,0 +1,70 @@
+body {
+  background: #000;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.door {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  perspective: 800px;
+  cursor: pointer;
+}
+
+.door-front, .door-back {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.6em;
+  transition: transform 0.7s;
+}
+
+.door-front {
+  background: #007bff;
+}
+
+.door-back {
+  background: #111;
+  padding: 10px;
+  font-size: 1em;
+  transform: rotateY(180deg);
+}
+
+.door.open .door-front {
+  transform: rotateY(180deg);
+}
+
+.door.open .door-back {
+  transform: rotateY(0deg);
+}
