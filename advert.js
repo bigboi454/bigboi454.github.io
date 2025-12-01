@@ -1,5 +1,5 @@
 async function loadNotes(password) {
-  const res = await fetch(`https://bigboi454-github-io-ecld-duo7uy5u5-bigboi454s-projects.vercel.app/api/notes?pw=${encodeURIComponent(password)}`);
+ const res = await fetch(`https://bigboi454-github-io-lp8g-jle735kib-bigboi454s-projects.vercel.app/api/notes?pw=${encodeURIComponent(password)}`);
   const data = await res.json();
 
   if (data.error) {
