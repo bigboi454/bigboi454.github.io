@@ -1,5 +1,5 @@
-const password = import.meta.env.VITE_PASSWORD;
-const notes = JSON.parse(import.meta.env.VITE_NOTES || "[]");
+const password = SECRETS.PASSWORD;
+const notes = SECRETS.NOTES;
 
 if (sessionStorage.getItem("advert_access") !== "true") {
   const userInput = prompt("Enter password to access the Advert Calendar:");
