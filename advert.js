@@ -1,31 +1,31 @@
-const password = "monkey";
+async function loadNotes(password) {
+  const res = await fetch(`https://bigboi454-github-io-ecld-duo7uy5u5-bigboi454s-projects.vercel.app/api/notes?pw=${encodeURIComponent(password)}`);
+  const data = await res.json();
 
-if (sessionStorage.getItem("advert_access") !== "true") {
-  const userInput = prompt("Enter password to access the Advert Calendar:");
-  if (userInput === password) {
-    sessionStorage.setItem("advert_access", "true");
-  } else {
-    alert("Incorrect password.");
-    window.location.href = "index.html";
+  if (data.error) {
+    alert("Wrong password");
+    return null;
   }
+
+  return data.notes;
 }
 
-let notes = [];
+(async () => {
+  const userInput = prompt("Enter password to access the Advert Calendar:");
+  const notes = await loadNotes(userInput);
 
-fetch("notes/notes.txt")
-  .then(res => res.text())
-  .then(text => {
-    text = text.trim();
-    text = text.replace(/^\{|\}$/g, "");
-    notes = text.split(/","/).map(s => s.replace(/"/g, "").trim());
-  });
+  if (!notes) {
+    window.location.href = "index.html";
+    return;
+  }
 
-document.querySelectorAll(".door").forEach(door => {
-  door.addEventListener("click", () => {
-    door.classList.toggle("open");
-    const day = parseInt(door.dataset.day);
-    const noteBox = document.getElementById("note-" + day);
-    const content = notes[day - 1] || "Missing Note";
-    noteBox.textContent = content;
+  // attach notes to your doors
+  document.querySelectorAll(".door").forEach(door => {
+    door.addEventListener("click", () => {
+      door.classList.toggle("open");
+      const day = parseInt(door.dataset.day);
+      const noteBox = document.getElementById("note-" + day);
+      noteBox.textContent = notes[day - 1] || "Missing Note";
+    });
   });
-});
+})();
