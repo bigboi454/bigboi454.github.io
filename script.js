@@ -1,4 +1,4 @@
-const targetDate = Date.UTC(2025, 11, 27, 0, 0, 0);
+const targetDate = Date.UTC(2025, 11, 27, 18, 25, 0);
 const startDate  = Date.UTC(2025, 11, 3, 0, 0, 0);
 
 const progressPath = document.getElementById("progress");
