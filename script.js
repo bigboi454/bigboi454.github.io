@@ -1,5 +1,5 @@
-const targetDate = Date.UTC(2025, 11, 27, 18, 25, 0);
-const startDate  = Date.UTC(2025, 11, 3, 0, 0, 0);
+const targetDate = Date.UTC(2025, 0, 16, 0, 0, 0);
+const startDate  = Date.UTC(2025, 0, 6, 0, 0, 0);
 
 const progressPath = document.getElementById("progress");
 const plane = document.getElementById("plane");
@@ -40,7 +40,7 @@ function triggerEnding() {
   if (finished) return;
   finished = true;
 
-  document.querySelector(".countdown").innerHTML = "<h2>You're in Manchester! 🎉</h2>";
+  document.querySelector(".countdown").innerHTML = "<h2>No new time yet</h2>";
 
   plane.setAttribute(
     "href",
@@ -60,7 +60,6 @@ function triggerEnding() {
   const timer = document.querySelector(".timer");
   if (timer) timer.style.opacity = "0.25";
 
-  confettiBurst();
 }
 
 function updateCountdown() {
