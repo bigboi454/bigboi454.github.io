@@ -1,5 +1,5 @@
-const targetDate = Date.UTC(2025, 0, 16, 0, 0, 0);
-const startDate  = Date.UTC(2025, 0, 6, 0, 0, 0);
+const targetDate = Date.UTC(2026, 0, 16, 0, 0, 0);
+const startDate  = Date.UTC(2026, 0, 6, 0, 0, 0);
 
 const progressPath = document.getElementById("progress");
 const plane = document.getElementById("plane");
@@ -42,20 +42,20 @@ function triggerEnding() {
 
   document.querySelector(".countdown").innerHTML = "<h2>No new time yet</h2>";
 
-  plane.setAttribute(
-    "href",
-    "https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg"
-  );
+  // plane.setAttribute(
+  //   "href",
+  //   "https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg"
+  // );
 
-  plane.classList.add("ending-heart");
+  // plane.classList.add("ending-heart");
 
-  const heartSize = 18;
+  // const heartSize = 18;
 
-  plane.setAttribute("x", 100 - heartSize / 2);
-  plane.setAttribute("y", 10 - heartSize / 2);
+  // plane.setAttribute("x", 100 - heartSize / 2);
+  // plane.setAttribute("y", 10 - heartSize / 2);
 
 
-  progressPath.style.stroke = "#ff4d6d";
+  // progressPath.style.stroke = "#ff4d6d";
 
   const timer = document.querySelector(".timer");
   if (timer) timer.style.opacity = "0.25";
