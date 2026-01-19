@@ -1,5 +1,5 @@
-const targetDate = Date.UTC(2026, 0, 16, 0, 0, 0);
-const startDate  = Date.UTC(2026, 0, 6, 0, 0, 0);
+const targetDate = Date.UTC(2026, 1, 12, 0, 0, 0);
+const startDate  = Date.UTC(2026, 0, 19, 0, 0, 0);
 
 const progressPath = document.getElementById("progress");
 const plane = document.getElementById("plane");
